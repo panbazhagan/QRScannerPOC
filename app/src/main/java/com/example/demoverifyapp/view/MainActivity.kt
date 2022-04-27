@@ -1,16 +1,17 @@
 package com.example.demoverifyapp.view
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.demoverifyapp.view.theme.DemoVerifyAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,32 +19,32 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             DemoVerifyAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                    Button(onClick = {
-                        QRCodeScannerActivity.open(this)
-                    }) {
-
-                    }
-                }
+                MainAppPage(this)
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
+fun PreviewMainAppPage() {
+    MainAppPage(context = LocalContext.current);
+}
+
+@Composable
+fun MainAppPage(context: Context) {
     DemoVerifyAppTheme {
-        Greeting("Android")
+        Scaffold(
+            floatingActionButton = {
+                FloatingActionButton(onClick = {
+                    QRCodeScannerActivity.open(context = context)
+                }) {
+                }
+            },
+            // Defaults to FabPosition.End
+            floatingActionButtonPosition = FabPosition.Center
+        ) {
+            // Screen content
+        }
     }
 }
