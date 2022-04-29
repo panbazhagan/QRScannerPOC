@@ -20,12 +20,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ScanActivity"
+            android:name=".ui.ScanActivity"
             android:exported="false"
             android:label="@string/title_activity_qrcode_scanner"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.ScanActivity"
+            android:exported="false"
+            android:label="@string/title_activity_qrcode_scanner"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">

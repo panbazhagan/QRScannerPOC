@@ -1,12 +1,12 @@
-package com.example.demoverifyapp
+package com.example.demoverifyapp.analyzer
 
 import android.graphics.ImageFormat.*
 import android.os.Build
 import android.util.Log
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageProxy
-import com.example.qrreader.*
-import com.example.qrreader.common.HybridBinarizer
+import com.google.zxing.*
+import com.google.zxing.common.HybridBinarizer
 import java.nio.ByteBuffer
 
 private fun ByteBuffer.toByteArray(): ByteArray {

@@ -12,6 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "DemoVerifyApp"
+rootProject.name = "QRScannerPOC"
 include ':app'
-include ':qrreader'
